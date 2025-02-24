@@ -1,0 +1,33 @@
+:root{
+    --color-primary-light:#FAF4EA;
+    --color-brand-normal:#8E6446;
+}
+.link {
+    color: var(--color-primary-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.link:hover{
+    color: var(--color-brand-normal);
+}
+body{
+    background-color: var(--color-primary-light);
+}
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    text-align: center;
+}
+th, td {
+    border: 2px solid black;
+    padding: 10px;
+}
+th {
+    background-color: var(--color-brand-normal);
+    color: white;
+}
+.img-table {
+    width: 80px; /* Розмір зображень */
+    height: 80px;
+}

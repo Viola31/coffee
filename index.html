@@ -2,9 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rebrova Violetta">
+    <title>Home page</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<header>
+<div class="container">
+    <div class="header-container">
+        <nav class="header-nav">
+            <a href="/">
+                <img src="./images/logo.svg" alt="Логотип">
+            </a>
+            <ul class="header-menu">
+                <li><a class="link" href="about.html">Про нас</a></li>
+                <li><a class="link" href="menu.html">Меню</a></li>
+                <li><a class="link" href="buy.html">Наша продукція</a></li>
+                <li><a class="link" href="#contact-section">Контакти</a></li>
+            </ul>
+        </nav>
+        <button class="button modal-btn-open" type="button">Замовити дзвінок</button>
+    </div>
+</div>
+</header>
+<main>
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title"><center>Coffee</center></h1>
+        </div>
+    </section>
+    <section class="section" id="location-section">
+        <div class="container">
+            <h2 class="location-title section-title centered">Наші  локації</h2>
+            <ul class="location-list">
+                <li class="location-item">
+                    <article class="location-card">
+                        <a href="images/naturecoffee.jpg" target="_blank">
+                        <img width="119" height="195" class="location-photo" src="images/naturecoffee.jpg" alt="Nature coffee">
+                        </a>
+                            <div>
+                            <h3 class="location-title">Nature coffee</h3>
+                            <div class="location-text">
+                                <p>Затишна та тепла кав’ярня. Сюди ти можеш прийти, щоб відпочити від гучного міста.
+                                    Смачна кава, приємна атмосфера - це <b>найкращий вибір</b> для твого спокою.</p>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                <li class="location-item">
+                    <article class="location-card">
+                        <img class="location-photo" src="images/yourhome.jpg" alt="Your home">
+                        <div>
+                            <h3 class="location-title">Your home</h3>
+                            <div class="location-text">
+                                <p><font size="5" style="font-family: 'Popins', 'sans-serif';">Тут завжди пахне кавою та випічкою. Закрий очі та поринь у свої приємні спогади.
+                                    Замов каву та десерт- це все , що тобі треба. Бери і насолоджуйся моментом у цій кав’ярні.</font></p>
+                            </div>
+                             </div>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="contact-section section" id="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2 class="contact-title section-title">Приєднуйся до мережі кав'ярень</h2>
+                    <p><i>Заповни форму, щоб ми звʼязались з тобою!</i></p>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2540.1636074303015!2d30.491273!3d50.456678!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce637c006b2d%3A0xaf86385f19996ff0!2z0LLRg9C70LjRhtGPINCh0ZbRh9C-0LLQuNGFINCh0YLRgNGW0LvRjNGG0ZbQsiwgNTQsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1740407282383!5m2!1suk!2sua"
+                        width="600"
+                        height="450"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <div class="footer-logo">
+                    <a href="#">
+                        <img src="./images/logo.svg" alt="Логотип сучасної пекарні">
+                    </a>
+                </div>
+                <ul class="footer-menu">
+                    <li><a class="link" href="about.html">Про нас</a></li>
+                    <li><a class="link" href="menu.html">Меню</a></li>
+                    <li><a class="link" href="buy.html">Наші продукти</a></li>
+                    <li><a class="link" href="#contact-section">Контакти</a></li>
+                </ul>
+            </nav>
+            <address class="footer-address">
+                <ul class="address-list">
+                    <li><a class="address-link" href="tel:+38096000000">+ 38 (096) 000 00 07</a></li>
+                    <li><a class="address-link" href="mailto:shopbakery@gmail.com">coffee@gmail.com</a></li>
+                    <li><a class="address-link" href="https://g.co/kgs/d1BuXsK" target="_blank">Україна, м. Київ, вул. Січових Стрільців 54</a></li>
+                    <li><a href="#">
+                        <svg class="address-icon" width="32px" height="32px">
+                            <use href="./images/icons.svg#icon-facebook"></use>
+                        </svg>
+                    </a></li>
+                    <li><a href="#">
+                        <svg class="address-icon" width="32px" height="32px">
+                            <use href="./images/icons.svg#icon-instagram"></use>
+                        </svg>
+                    </a></li>
+                </ul>
+                <div class="address-info">
+                    <a class="address-link" href="#" target="_blank">Політика конфіденційності</a>
+                    <p class="address-copyright">&copy; 2025 Дані захищені</p>
+                </div>
+            </address>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
