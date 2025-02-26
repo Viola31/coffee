@@ -6,6 +6,17 @@
     <meta name="author" content="Rebrova Violetta">
     <title>About</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .link-table {
+            color: #8E6446 ;
+        }
+        .link-table:hover{
+            color: #31261A;
+        }
+        .text-list{
+            font-weight: 600; !important;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -33,11 +44,11 @@
         </div>
     </section>
     <dl>
-        <dt><b>Історія</b></dt>
-        <dd>Наша історія почалася з любові до справжньої кави.
+        <dt class="text-list">Історія</dt>
+        <dd >Наша історія почалася з любові до справжньої кави.
             Відбірні зерна, майстерність бариста та увага до деталей – ось що робить кожну чашку унікальною.</dd>
-        <dt><b>Постачальники</b></dt>
-        <dd>Ми ретельно обираємо постачальників,
+        <dt class="text-list">Постачальники</dt>
+        <dd >Ми ретельно обираємо постачальників,
             працюємо лише з якісною арабікою та робустою, щоб ви могли насолоджуватися найкращими смаками та ароматами.</dd>
     </dl>
     <ol>
@@ -46,7 +57,7 @@
         <li>Тільки найзатишні місця</li>
         <li>Місце, де можна відпочити</li>
     </ol>
-    <table>
+    <table class="table-coffee">
         <caption><b>Види кави</b></caption>
         <tr>
             <th>Арабіка</th>
@@ -61,21 +72,21 @@
             <td><img class="img-table" src="images/exselca.jpg" alt="Ексцельса"></td>
         </tr>
         <tr>
-            <td><a href="images/arabica.jpg" target="_blank">Арабіка</a></td>
-            <td><a href="images/robusta.jpg" target="_blank">Робуста</a></td>
-            <td><a href="images/liberica.jpg" target="_blank">Ліберіка</a></td>
-            <td><a href="images/exselca.jpg" target="_blank">Ексцельса</a></td>
+            <td><a class="link-table" href="images/arabica.jpg" target="_blank">Арабіка</a></td>
+            <td><a class="link-table" href="images/robusta.jpg" target="_blank">Робуста</a></td>
+            <td><a class="link-table" href="images/liberica.jpg" target="_blank">Ліберіка</a></td>
+            <td><a class="link-table" href="images/exselca.jpg" target="_blank">Ексцельса</a></td>
         </tr>
         <tr>
-            <td>Арабіка належить до найбільш цінного та поширеного виду кави.
+            <td class="table-text-coffee">Арабіка належить до найбільш цінного та поширеного виду кави.
                 Близько 60% кавового зерна на ринку припадає саме на сорти кави арабіка. </td>
-            <td>Робуста – другий за популярністю сорт кави. Частка такого зерна на ринку становить близько 29%.</td>
-            <td>Містить низький рівень кофеїну, приємний сильний аромат, але ненасичений смак.
+            <td class="table-text-coffee">Робуста – другий за популярністю сорт кави. Частка такого зерна на ринку становить близько 29%.</td>
+            <td class="table-text-coffee">Містить низький рівень кофеїну, приємний сильний аромат, але ненасичений смак.
                 Зерна ліберіки використовують в кавових сумішах для посилення аромату.</td>
-            <td>Унікальний і досить рідкісний сорт, батьківщиною якого називають Південно-Східну частину Азії.</td>
+            <td class="table-text-coffee">Унікальний і досить рідкісний сорт, батьківщиною якого називають Південно-Східну частину Азії.</td>
         </tr>
     </table>
-    <table cellspacing="10" cellpadding="10">
+    <table class="table-drink" cellspacing="10" cellpadding="10">
         <caption><b>Наші найпопулярніші напої</b></caption>
         <colgroup>
             <col style="background-color:#EFDBC3;">
@@ -133,22 +144,12 @@
                 </nav>
                 <address class="footer-address">
                     <ul class="address-list">
-                        <li><a class="address-link" href="tel:+38096000000">+ 38 (096) 000 00 07</a></li>
-                        <li><a class="address-link" href="mailto:shopbakery@gmail.com">coffee@gmail.com</a></li>
-                        <li><a class="address-link" href="https://g.co/kgs/d1BuXsK" target="_blank">Україна, м. Київ, вул. Січових Стрільців 54</a></li>
-                        <li><a href="#">
-                            <svg class="address-icon" width="32px" height="32px">
-                                <use href="./images/icons.svg#icon-facebook"></use>
-                            </svg>
-                        </a></li>
-                        <li><a href="#">
-                            <svg class="address-icon" width="32px" height="32px">
-                                <use href="./images/icons.svg#icon-instagram"></use>
-                            </svg>
-                        </a></li>
+                        <li><a class="link" href="tel:+38096000000">+ 38 (096) 000 00 07</a></li>
+                        <li><a class="link" href="mailto:shopbakery@gmail.com">coffee@gmail.com</a></li>
+                        <li><a class="link" href="https://g.co/kgs/d1BuXsK" target="_blank">Україна, м. Київ, вул. Січових Стрільців 54</a></li>
                     </ul>
                     <div class="address-info">
-                        <a class="address-link" href="#" target="_blank">Політика конфіденційності</a>
+                        <a class="link" href="#" target="_blank">Політика конфіденційності</a>
                         <p class="address-copyright">&copy; 2025 Дані захищені</p>
                     </div>
                 </address>
