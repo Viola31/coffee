@@ -113,3 +113,12 @@ footer{
     font-weight: 400;
     line-height: normal;
 }
+
+.table-item + .table-item th {
+    color: var(--color-primary-light);
+}
+.table-item >  th{
+    border: 3px solid var(--color-primary-dark);
+    color: var(--color-brand-light);
+    text-transform: uppercase;
+}
