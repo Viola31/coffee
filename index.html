@@ -6,6 +6,34 @@
     <meta name="author" content="Rebrova Violetta">
     <title>Home page</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.onload = function() {
+            alert("Ласкаво просимо до нашої кав'ярні!");
+            let leaveMessage = confirm("Бажаєте залишити відгук про кав'ярню?");
+
+            if (leaveMessage) {
+                let userMessage = prompt("Будь ласка, напишіть ваш відгук:");
+
+                if (userMessage === null || userMessage === "") {
+                    alert("Ви не залишили відгук. Дякуємо за відвідування!");
+                } else {
+                    alert("Дякуємо за ваш відгук! Ми його обов'язково врахуємо.");
+                }
+            } else {
+                alert("До зустрічі! Сподіваємось побачити вас знову.");
+            }
+
+        };
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.style.backgroundColor = "#EFDBC3";
+
+            setTimeout(function() {
+                document.body.style.backgroundColor = "#FAF4EA";
+            }, 30000);
+        });
+    </script>
 </head>
 <body>
 <header>
@@ -22,7 +50,7 @@
                 <li><a class="link" href="#contact-section">Контакти</a></li>
             </ul>
         </nav>
-        <button class="button modal-btn-open" type="button">Замовити дзвінок</button>
+        <button class="button modal-btn-open" onclick="startDialog()" type="button">Замовити напій</button>
     </div>
 </div>
 </header>
@@ -75,6 +103,7 @@
     <section class="contact-section section" id="contact-section">
         <div class="container">
             <div class="contact-container">
+                <button class="button modal-btn-open" id="redirectBtn" type="button">Дізнатися більше про нас</button>
                 <div class="contact-form">
                     <h2 class="contact-title section-title">Приходь до нас</h2>
                 </div>
@@ -87,6 +116,7 @@
             </div>
         </div>
     </section>
+
 </main>
 <footer class="footer">
     <div class="container">
@@ -113,5 +143,15 @@
         </div>
     </div>
 </footer>
+<script>
+    function redirect() {
+        setTimeout(function () {
+            location.href = "about.html";
+        }, 1000);
+    }
+
+    const redirectBtn = document.getElementById("redirectBtn");
+    redirectBtn.addEventListener("click", redirect);
+</script>
 </body>
 </html>

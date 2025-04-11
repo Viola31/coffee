@@ -6,6 +6,19 @@
     <meta name="author" content="Rebrova Violetta">
     <title>Products</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function compareStrings(string1, string2) {
+            let result;
+            if (string1.length > string2.length) {
+                result = "Більший рядок: " + string1;
+            } else if (string2.length > string1.length) {
+                result = "Більший рядок: " + string2;
+            } else {
+                result = "Рядки однакові за довжиною.";
+            }
+            alert(result);
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -22,7 +35,8 @@
                     <li><a class="link" href="index.html#contact-section">Контакти</a></li>
                 </ul>
             </nav>
-            <button class="button modal-btn-open" type="button">Замовити дзвінок</button>
+
+            <button class="button modal-btn-open" onclick="startDialog()" type="button">Замовити напій</button>
         </div>
     </div>
 </header>
@@ -119,6 +133,7 @@
                     <div class="address-info">
                         <a class="link" href="#" target="_blank">Політика конфіденційності</a>
                         <p class="address-copyright">&copy; 2025 Дані захищені</p>
+                        <button class="button" onclick="compareStrings('Чорна кава', 'Капучино з молоком')">Порівняти Рядки</button>
                     </div>
                 </address>
             </div>

@@ -17,6 +17,14 @@
             font-weight: 600; !important;
         }
     </style>
+    <script>
+        function showDeveloperInfo(firstName, lastName, position = "Розробник") {
+            alert("Інформація про розробника:\n" +
+                "Ім'я: " + firstName + "\n" +
+                "Прізвище: " + lastName + "\n" +
+                "Посада: " + position);
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -33,7 +41,8 @@
                     <li><a class="link" href="index.html#contact-section">Контакти</a></li>
                 </ul>
             </nav>
-            <button class="button modal-btn-open" type="button">Замовити дзвінок</button>
+
+            <button class="button modal-btn-open" onclick="startDialog()" type="button">Замовити напій</button>
         </div>
     </div>
 </header>
@@ -51,12 +60,11 @@
         <dd >Ми ретельно обираємо постачальників,
             працюємо лише з якісною арабікою та робустою, щоб ви могли насолоджуватися найкращими смаками та ароматами.</dd>
     </dl>
-    <ol type="1">
-        <li>Тільки найкраща кава та десерти</li>
-        <li>Привітний персонал</li>
-        <li>Тільки найзатишні місця</li>
-        <li>Місце, де можна відпочити</li>
-    </ol>
+    <div class="container">
+        <h2 id="demo-title">Початковий заголовок</h2>
+        <p id="demo-paragraph">Це початковий текст абзацу.</p>
+        <div id="container"></div>
+    </div>
     <table class="table-coffee">
         <caption><b>Види кави</b></caption>
         <tr>
@@ -72,10 +80,10 @@
             <td><img class="img-table" src="images/exselca.jpg" alt="Ексцельса"></td>
         </tr>
         <tr>
-            <td><a class="link-table" href="images/arabica.jpg" target="_blank">Арабіка</a></td>
-            <td><a class="link-table" href="images/robusta.jpg" target="_blank">Робуста</a></td>
-            <td><a class="link-table" href="images/liberica.jpg" target="_blank">Ліберіка</a></td>
-            <td><a class="link-table" href="images/exselca.jpg" target="_blank">Ексцельса</a></td>
+            <td><button class="button redirect-btn">Арабіка</button></td>
+            <td><button class="button redirect-btn">Робуста</button></td>
+            <td><button class="button redirect-btn">Ліберіка</button></td>
+            <td><button class="button redirect-btn">Ексцельса</button></td>
         </tr>
         <tr>
             <td class="table-text-coffee">Арабіка належить до найбільш цінного та поширеного виду кави.
@@ -146,12 +154,63 @@
                     <div class="address-info">
                         <a class="address-link" href="#" target="_blank">Політика конфіденційності</a>
                         <p class="address-copyright">&copy; 2025 Дані захищені</p>
+                        <button class="button" onclick="showDeveloperInfo('Віолетта', 'Реброва')">Показати інформацію</button>
                     </div>
                 </address>
             </div>
         </div>
     </footer>
-</body>
+<script>
+    const buttons = document.querySelectorAll(".redirect-btn");
 
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function () {
+            setTimeout(function () {
+                location.href = "buy.html";
+            }, 1000);
+        });
+    });
+</script>
+<script>
+    const title = document.getElementById("demo-title");
+    const paragraph = document.getElementById("demo-paragraph");
+
+    title.innerHTML = "<h2>Новий <b>заголовок</b></h2>";
+
+    paragraph.outerHTML = "<p style='font-style: italic;'>Nature coffee та Your home</p>";
+
+    console.log("textContent:", title.textContent);
+
+    const textNode = document.createTextNode("Це текстовий вузол");
+    console.log("nodeValue:", textNode.nodeValue);
+
+    document.write("<hr><p style='color: #8E6446; margin-left: 10px;' >Приходь до нас</p>");
+
+    const container = document.getElementById("container");
+
+    const newDiv = document.createElement("div");
+    newDiv.style.border = "1px solid black";
+    newDiv.style.padding = "10px";
+
+    const newText = document.createTextNode("Кав'ярня — це місце, де можна насолодитися ароматною кавою та смачною випічкою в затишній атмосфері. Ми пропонуємо різноманітні напої, від класичного еспресо до нових смаків, а також смачні десерти та закуски. " +
+        "Завітайте до нас, щоб зробити перерву, зустрітися з друзями або просто відпочити за чашкою кави.");
+    newDiv.appendChild(newText);
+
+    container.prepend("Хто ми");
+    container.append(newDiv, "Ми тебе чекаємо!");
+
+    const note = document.createElement("p");
+    note.textContent = "Першому клієнту кава в подарунок ;)";
+    container.after(note);
+
+    const replacement = document.createElement("h3");
+    replacement.textContent = "Про нашу кав'ярню";
+    title.replaceWith(replacement);
+
+    setTimeout(() => {
+        note.remove();
+    }, 5000);
+</script>
+</body>
 
 </html>
