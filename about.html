@@ -65,6 +65,46 @@
         <p id="demo-paragraph">Це початковий текст абзацу.</p>
         <div id="container"></div>
     </div>
+    <script>
+        const title = document.getElementById("demo-title");
+        const paragraph = document.getElementById("demo-paragraph");
+
+        title.innerHTML = "<h2>Новий <b>заголовок</b></h2>";
+
+        paragraph.outerHTML = "<p style='font-style: italic;'>Nature coffee та Your home</p>";
+
+        console.log("textContent:", title.textContent);
+
+        const textNode = document.createTextNode("Це текстовий вузол");
+        console.log("nodeValue:", textNode.nodeValue);
+
+        document.write("<hr><p style='color: #8E6446; margin-left: 10px;' >Приходь до нас</p>");
+
+        const container = document.getElementById("container");
+
+        const newDiv = document.createElement("div");
+        newDiv.style.border = "1px solid black";
+        newDiv.style.padding = "10px";
+
+        const newText = document.createTextNode("Кав'ярня — це місце, де можна насолодитися ароматною кавою та смачною випічкою в затишній атмосфері. Ми пропонуємо різноманітні напої, від класичного еспресо до нових смаків, а також смачні десерти та закуски. " +
+            "Завітайте до нас, щоб зробити перерву, зустрітися з друзями або просто відпочити за чашкою кави.");
+        newDiv.appendChild(newText);
+
+        container.prepend("Хто ми");
+        container.append(newDiv, "Ми тебе чекаємо!");
+
+        const note = document.createElement("p");
+        note.textContent = "Першому клієнту кава в подарунок ;)";
+        container.after(note);
+
+        const replacement = document.createElement("h3");
+        replacement.textContent = "Про нашу кав'ярню";
+        title.replaceWith(replacement);
+
+        setTimeout(() => {
+            note.remove();
+        }, 5000);
+    </script>
     <table class="table-coffee">
         <caption><b>Види кави</b></caption>
         <tr>
@@ -170,46 +210,6 @@
             }, 1000);
         });
     });
-</script>
-<script>
-    const title = document.getElementById("demo-title");
-    const paragraph = document.getElementById("demo-paragraph");
-
-    title.innerHTML = "<h2>Новий <b>заголовок</b></h2>";
-
-    paragraph.outerHTML = "<p style='font-style: italic;'>Nature coffee та Your home</p>";
-
-    console.log("textContent:", title.textContent);
-
-    const textNode = document.createTextNode("Це текстовий вузол");
-    console.log("nodeValue:", textNode.nodeValue);
-
-    document.write("<hr><p style='color: #8E6446; margin-left: 10px;' >Приходь до нас</p>");
-
-    const container = document.getElementById("container");
-
-    const newDiv = document.createElement("div");
-    newDiv.style.border = "1px solid black";
-    newDiv.style.padding = "10px";
-
-    const newText = document.createTextNode("Кав'ярня — це місце, де можна насолодитися ароматною кавою та смачною випічкою в затишній атмосфері. Ми пропонуємо різноманітні напої, від класичного еспресо до нових смаків, а також смачні десерти та закуски. " +
-        "Завітайте до нас, щоб зробити перерву, зустрітися з друзями або просто відпочити за чашкою кави.");
-    newDiv.appendChild(newText);
-
-    container.prepend("Хто ми");
-    container.append(newDiv, "Ми тебе чекаємо!");
-
-    const note = document.createElement("p");
-    note.textContent = "Першому клієнту кава в подарунок ;)";
-    container.after(note);
-
-    const replacement = document.createElement("h3");
-    replacement.textContent = "Про нашу кав'ярню";
-    title.replaceWith(replacement);
-
-    setTimeout(() => {
-        note.remove();
-    }, 5000);
 </script>
 </body>
 
