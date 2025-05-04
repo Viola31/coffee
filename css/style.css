@@ -31,6 +31,8 @@
     background-color: transparent;
     color: var(--color-primary-dark);
 }
+
+
 .link
 {
     text-decoration: none;
@@ -145,7 +147,7 @@ th {
 }
 .hero-section{
     padding: 60px 0;
-    background-image: url("/images/backgraund.jpg");
+    background-image: url("../images/backgraund.jpg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -346,4 +348,8 @@ footer{
 .text-accent{
     font-style: italic;
     color: var(--color-brand-normal);
+}
+.highlight {
+    background-color: #ffd29d;
+    transition: background-color 0.3s ease;
 }

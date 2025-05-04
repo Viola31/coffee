@@ -5,35 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Rebrova Violetta">
     <title>Home page</title>
+    <script src="startDialog.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <script>
-        window.onload = function() {
-            alert("Ласкаво просимо до нашої кав'ярні!");
-            let leaveMessage = confirm("Бажаєте залишити відгук про кав'ярню?");
-
-            if (leaveMessage) {
-                let userMessage = prompt("Будь ласка, напишіть ваш відгук:");
-
-                if (userMessage === null || userMessage === "") {
-                    alert("Ви не залишили відгук. Дякуємо за відвідування!");
-                } else {
-                    alert("Дякуємо за ваш відгук! Ми його обов'язково врахуємо.");
-                }
-            } else {
-                alert("До зустрічі! Сподіваємось побачити вас знову.");
-            }
-
-        };
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.style.backgroundColor = "#EFDBC3";
-
-            setTimeout(function() {
-                document.body.style.backgroundColor = "#FAF4EA";
-            }, 30000);
-        });
-    </script>
 </head>
 <body>
 <header>
@@ -50,7 +23,7 @@
                 <li><a class="link" href="#contact-section">Контакти</a></li>
             </ul>
         </nav>
-        <button class="button modal-btn-open" onclick="startDialog()" type="button">Замовити напій</button>
+        <button class="button modal-btn-open"  id="feedbackBtn" type="button">Залишити відгук</button>
     </div>
 </div>
 </header>
@@ -151,7 +124,8 @@
     }
 
     const redirectBtn = document.getElementById("redirectBtn");
-    redirectBtn.addEventListener("click", redirect);
+    redirectBtn.onclick = redirect;
 </script>
+<script src="script.js"></script>
 </body>
 </html>

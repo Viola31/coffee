@@ -6,6 +6,7 @@
     <meta name="author" content="Rebrova Violetta">
     <title>About</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="startDialog.js"></script>
     <style>
         .link-table {
             color: #8E6446 ;
@@ -17,14 +18,6 @@
             font-weight: 600; !important;
         }
     </style>
-    <script>
-        function showDeveloperInfo(firstName, lastName, position = "Розробник") {
-            alert("Інформація про розробника:\n" +
-                "Ім'я: " + firstName + "\n" +
-                "Прізвище: " + lastName + "\n" +
-                "Посада: " + position);
-        }
-    </script>
 </head>
 <body>
 <header>
@@ -41,8 +34,6 @@
                     <li><a class="link" href="index.html#contact-section">Контакти</a></li>
                 </ul>
             </nav>
-
-            <button class="button modal-btn-open" onclick="startDialog()" type="button">Замовити напій</button>
         </div>
     </div>
 </header>
@@ -186,7 +177,7 @@
                     </ul>
                 </nav>
                 <address class="footer-address">
-                    <ul class="address-list">
+                    <ul class="address-list" id="addressList">
                         <li><a class="address-link" href="tel:+38096000000">+ 38 (096) 000 00 07</a></li>
                         <li><a class="address-link" href="mailto:shopbakery@gmail.com">coffee@gmail.com</a></li>
                         <li><a class="address-link" href="https://g.co/kgs/d1BuXsK" target="_blank">Україна, м. Київ, вул. Січових Стрільців 54</a></li>
@@ -194,23 +185,58 @@
                     <div class="address-info">
                         <a class="address-link" href="#" target="_blank">Політика конфіденційності</a>
                         <p class="address-copyright">&copy; 2025 Дані захищені</p>
-                        <button class="button" onclick="showDeveloperInfo('Віолетта', 'Реброва')">Показати інформацію</button>
+                        <button class="button" id="infoBtn">Показати інформацію</button>
                     </div>
                 </address>
             </div>
         </div>
     </footer>
-<script>
-    const buttons = document.querySelectorAll(".redirect-btn");
 
-    buttons.forEach(function(button) {
-        button.addEventListener("click", function () {
-            setTimeout(function () {
-                location.href = "buy.html";
-            }, 1000);
-        });
+
+<script>
+    class DeveloperInfoHandler {
+        handleEvent(event) {
+            console.log("Подія спрацювала на елементі: ", event.currentTarget);
+            showDeveloperInfo('Віолетта', 'Реброва');
+        }
+    }
+
+    function showDeveloperInfo(firstName, lastName, position = "Розробник") {
+        alert("Інформація про розробника:\n" +
+            "Ім'я: " + firstName + "\n" +
+            "Прізвище: " + lastName + "\n" +
+            "Посада: " + position);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const btn = document.getElementById("infoBtn");
+
+        if (btn) {
+            const developerInfoHandler = new DeveloperInfoHandler();
+            btn.addEventListener("click", developerInfoHandler);
+        } else {
+            console.log("Кнопка не знайдена.");
+        }
+    });
+
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const list = document.getElementById("addressList");
+
+        list.onclick = function(event) {
+            const items = list.querySelectorAll("li");
+            items.forEach(item => item.classList.remove("highlight"));
+
+            let targetItem = event.target.closest("li");
+            if (targetItem && list.contains(targetItem)) {
+                targetItem.classList.add("highlight");
+            }
+        };
     });
 </script>
+
+
 </body>
 
 </html>

@@ -6,19 +6,8 @@
     <meta name="author" content="Rebrova Violetta">
     <title>Products</title>
     <link rel="stylesheet" href="css/style.css">
-    <script>
-        function compareStrings(string1, string2) {
-            let result;
-            if (string1.length > string2.length) {
-                result = "Більший рядок: " + string1;
-            } else if (string2.length > string1.length) {
-                result = "Більший рядок: " + string2;
-            } else {
-                result = "Рядки однакові за довжиною.";
-            }
-            alert(result);
-        }
-    </script>
+    <script src="startDialog.js"></script>
+
 </head>
 <body>
 <header>
@@ -35,8 +24,12 @@
                     <li><a class="link" href="index.html#contact-section">Контакти</a></li>
                 </ul>
             </nav>
+            <div id="menu" class="menu">
+                <button class="button modal-btn-open" data-action="orderCoffee">Купити каву</button>
+                <button class="button modal-btn-open" data-action="orderTea">Купити чай</button>
+                <button class="button modal-btn-open" data-action="leaveFeedback">Залишити відгук</button>
+            </div>
 
-            <button class="button modal-btn-open" onclick="startDialog()" type="button">Замовити напій</button>
         </div>
     </div>
 </header>
@@ -133,11 +126,74 @@
                     <div class="address-info">
                         <a class="link" href="#" target="_blank">Політика конфіденційності</a>
                         <p class="address-copyright">&copy; 2025 Дані захищені</p>
-                        <button class="button" onclick="compareStrings('Чорна кава', 'Капучино з молоком')">Порівняти Рядки</button>
+                        <button class="button" id="compareBtn">Порівняти Рядки</button>
                     </div>
                 </address>
             </div>
         </div>
     </footer>
+<script>
+    function compareStrings(string1, string2) {
+        let result;
+        if (string1.length > string2.length) {
+            result = "Більший рядок: " + string1;
+        } else if (string2.length > string1.length) {
+            result = "Більший рядок: " + string2;
+        } else {
+            result = "Рядки однакові за довжиною.";
+        }
+        alert(result);
+    }
+
+    const compareBtn = document.getElementById("compareBtn");
+
+    function handleClickOnce() {
+        compareStrings("Чорна кава", "Капучино з молоком");
+        compareBtn.removeEventListener("click", handleClickOnce);
+        alert("Обробник видалено. Повторне натискання не спрацює.");
+    }
+
+    compareBtn.addEventListener("click", handleClickOnce);
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menu = document.getElementById("menu");
+        const actions = {
+            orderCoffee() {
+                const coffeeType = prompt("Який тип кави ви хочете?( Арабіка, Робуста, Фільтр кава)");
+                if (coffeeType) {
+                    alert("Ви замовили: " + coffeeType);
+                }
+            },
+            orderTea() {
+                const teaType = prompt("Який тип чаю ви хочете? (Зелений, Чорний, Трав'яний)");
+                if (teaType) {
+                    alert("Ви замовили: " + teaType + " чай!");
+                }
+            },
+            leaveFeedback() {
+                const feedback = prompt("Будь ласка, залиште ваш відгук:");
+                if (feedback) {
+                    alert("Дякуємо за ваш відгук!");
+                } else {
+                    alert("Ви не залишили відгук.");
+                }
+            }
+        };
+        menu.addEventListener("click", function(event) {
+            const button = event.target.closest("button[data-action]");
+            if (!button) return;
+
+            const actionName = button.dataset.action;
+            const action = actions[actionName];
+
+            if (action) action();
+            else console.warn("Дія не визначена:", actionName);
+        });
+    });
+</script>
+
+
 </body>
 </html>
