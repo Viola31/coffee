@@ -161,7 +161,7 @@ th {
 
 footer{
     padding: 32px 0;
-    background-image: url("/images/backgraundfooter.jpg");
+    background-image: url("../images/backgraundfooter.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -210,22 +210,27 @@ footer{
     text-transform: uppercase;
 }
 
-.menu-container{
+.menu-container {
     display: flex;
     gap: 32px;
     align-items: center;
 }
-.menu-list{
+
+.menu-list {
     display: flex;
     flex-wrap: wrap;
     gap: 28px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-bottom:25px;
 }
-.menu-card{
+
+.menu-card {
     height: 440px;
     padding: 24px;
     border: 1px solid lightgrey;
     border-radius: 16px;
-    background-image:  linear-gradient(180deg, rgba(49, 38, 26, 0.00) 61.54%, rgba(49, 38, 26, 0.71) 88.46%, #31261A 100%);
 }
 
 .item{
@@ -233,42 +238,41 @@ footer{
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 16px;
-    transform: scale(1);
     transition: transform 0.3s;
 }
 .item:hover{
     transform: scale(1.05);
 }
 .item.coffee:first-child{
-    background-image: url("/images/americano.jpg");
+    background-image: url("../images/americano.jpg");
 }
 .item.coffee:nth-child(2){
-    background-image: url("/images/latte.jpg");
+    background-image: url("../images/latte.jpg");
 }
 .item.coffee:last-child{
-    background-image: url("/images/ice-coffee.jpg");
+    background-image: url("../images/ice-coffee.jpg");
 }
 
 
 .item.tea:first-child{
-    background-image: url("/images/greentea.jpg");
+    background-image: url("../images/greentea.jpg");
 }
 .item.tea:nth-child(2){
-    background-image: url("/images/blacktea.jpg");
+    background-image: url("../images/blacktea.jpg");
 }
 .item.tea:last-child{
-    background-image: url("/images/herbaltea.jpg");
+    background-image: url("../images/herbaltea.jpg");
 }
 
 
 .item.dessert:first-child{
-    background-image: url("/images/threemilks.jpg");
+    background-image: url("../images/threemilks.jpg");
 }
 .item.dessert:nth-child(2){
-    background-image: url("/images/pannacotta.jpg");
+    background-image: url("../images/pannacotta.jpg");
 }
 .item.dessert:last-child{
-    background-image: url("/images/macaroni.jpg");
+    background-image: url("../images/macaroni.jpg");
 }
 
 .menu-text{
@@ -305,23 +309,23 @@ footer{
     right: 160px;
 }
 .item.buy-coffee:first-child{
-    background-image: url("/images/arabicabuy.jpg");
+    background-image: url("../images/arabicabuy.jpg");
 }
 .item.buy-coffee:nth-child(2){
-    background-image: url("/images/robustabuy.jpg");
+    background-image: url("../images/robustabuy.jpg");
 }
 .item.buy-coffee:last-child{
-    background-image: url("/images/filtr.jpg");
+    background-image: url("../images/filtr.jpg");
 }
 
 .item.buy-tea:first-child{
-    background-image: url("/images/greenteabuy.jpg");
+    background-image: url("../images/greenteabuy.jpg");
 }
 .item.buy-tea:nth-child(2){
-    background-image: url("/images/blackteabuy.jpg");
+    background-image: url("../images/blackteabuy.jpg");
 }
 .item.buy-tea:last-child{
-    background-image: url("/images/herbalteabuy.jpg");
+    background-image: url("../images/herbalteabuy.jpg");
 }
 .location-item {
     overflow: hidden;
